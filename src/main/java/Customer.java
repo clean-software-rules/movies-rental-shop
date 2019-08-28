@@ -10,29 +10,40 @@ public class Customer {
     }
     
     public String statement() {
-        Enumeration rentals = _rentals.elements();
-        String result = "Rental Record for " + getName() + "\n";
-        while (rentals.hasMoreElements()) {
-            Rental each = (Rental) rentals.nextElement();
-            
-            //show figures for this rental
-            result += "\t" + each.getMovie().getTitle()+ "\t" +
-                    String.valueOf(each.getCharge()) + "\n";
-        }
-        //add footer lines
-        result += "Amount owed is " + String.valueOf(getTotalCharge()) + "\n";
-        result += "You earned " + String.valueOf(getTotalFrequentEnterPoints()) +
-                " frequent renter points";
-        return result;
+        return headerPrintStr() + moviesPrintStr() + footerPrintStr();
+    }
+    
+    public String getName() {
+        return _name;
     }
     
     public void addRental(Rental arg) {
         _rentals.addElement(arg);
     }
     
-    public String getName() {
-        return _name;
+    private String moviesPrintStr() {
+        String result = "";
+        Enumeration rentals = _rentals.elements();
+        while (rentals.hasMoreElements()) {
+            Rental each = (Rental) rentals.nextElement();
+    
+            //show figures for this rental
+            result += "\t" + each.getMovie().getTitle()+ "\t" +
+                    String.valueOf(each.getCharge()) + "\n";
+        }
+        return result;
     }
+    
+    private String headerPrintStr() {
+        return "Rental Record for " + getName() + "\n";
+    }
+    
+    private String footerPrintStr() {
+        return "Amount owed is " + String.valueOf(getTotalCharge()) + "\n" + "You earned " +
+                String.valueOf(getTotalFrequentEnterPoints()) +
+                " frequent renter points";
+    }
+    
     
     private double getTotalCharge() {
         double result = 0;
