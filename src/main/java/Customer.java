@@ -40,7 +40,6 @@ public class Customer {
     
     private double amountFor(Rental aRental) {
         double result = 0;
-        // determine amount for each line
         switch (aRental.getMovie().getPriceCode()) {
             case Movie.REGULAR:
                 result += 2;
