@@ -15,3 +15,8 @@ The demo from Chapter-1 of《Refactoring Improving the Design of Existing Code�
 * 普通片：租赁一次，积1分。
 * 新片： 租赁时间超过一天，积2分，否则积1分。
 * 儿童片：租赁一次，积1分。
+
+## 分支说明：
+* master: 主干分支，包括重构之后的结果。
+* refactor：重构分支，包括每次重构的过程和思路。
+* origin_source: 源代码分支，是最初待重构的代码。
