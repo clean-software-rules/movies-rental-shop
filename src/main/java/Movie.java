@@ -4,7 +4,6 @@ public class Movie {
     public static final int NEW_RELEASE = 1;
     
     private String _title;
-    private int _priceCode;
     private Price _price;
     
     public Movie(String title, int priceCode) {
@@ -12,12 +11,8 @@ public class Movie {
         setPriceCode(priceCode);
     }
     
-    public int getPriceCode() {
-        return _price.getPriceCode();
-    }
-    
-    public void setPriceCode(int _priceCode) {
-        switch (_priceCode) {
+    public void setPriceCode(int priceCode) {
+        switch (priceCode) {
             case REGULAR:
                 _price = new RegularPrice();
                 break;
