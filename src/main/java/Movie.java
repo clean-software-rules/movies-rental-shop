@@ -8,10 +8,10 @@ public class Movie {
     
     public Movie(String title, int priceCode) {
         _title = title;
-        setPriceCode(priceCode);
+        setPrice(priceCode);
     }
     
-    public void setPriceCode(int priceCode) {
+    public void setPrice(int priceCode) {
         switch (priceCode) {
             case REGULAR:
                 _price = new RegularPrice();
@@ -25,6 +25,10 @@ public class Movie {
                 default:
                     throw new IllegalArgumentException("Incorrect Price Code");
         }
+    }
+    
+    public Price getPrice() {
+        return _price;
     }
     
     public String getTitle() {
