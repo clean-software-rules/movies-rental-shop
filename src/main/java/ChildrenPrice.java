@@ -6,9 +6,9 @@ public class ChildrenPrice extends Price {
     
     @Override
     public double getCharge(int daysRented) {
-        double result = 1.5;
-        if (daysRented > 3) {
-            result += (daysRented - 3) * 1.5;
+        double result = ONE_POINT_FIVE_$;
+        if (daysRented > THREE_DAYS) {
+            result += (daysRented - THREE_DAYS) * ONE_POINT_FIVE_$_EVERT_DAY;
         }
         return result;
     }
